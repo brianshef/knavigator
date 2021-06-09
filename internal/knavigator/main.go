@@ -7,7 +7,7 @@ import (
 	"github.com/brianshef/knavigator/internal/data"
 )
 
-// Hello simply prints "hello"
+// GenerateCharacter generates a new Knave character
 func GenerateCharacter() {
 	config, err := data.LoadConfig()
 	if err != nil {

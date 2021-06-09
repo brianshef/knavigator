@@ -1,10 +1,21 @@
 # knavigator
 Generate a Knave character
 
-### How to run locally
+### How to ...
 
+- Execute linting and unit tests:
 ```
-go run cmd/app/main.go 
+make test
+```
+
+- Run locally:
+```
+make run
+```
+
+- Build locally:
+```
+make build
 ```
 
 ### What is Knave?
@@ -14,11 +25,8 @@ go run cmd/app/main.go
 ## Development
 
 - TODO: Unit tests !!!
-- TODO: Break out the components of the character struct into their own packages
-- TODO: Utility lib for making random choice among set of options
 - TODO: Generate armor
 - TODO: Generate gear
-- TODO: Generate traits
 - TODO: Turning resulting data into nice-looking presentation
 
 ### Thanks

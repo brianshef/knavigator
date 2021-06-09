@@ -35,7 +35,7 @@ func loadTraits() (tc *TraitsConfig, err error) {
 		return
 	}
 
-	fileJson, err := ioutil.ReadFile(absPath)
+	f, err := ioutil.ReadFile(absPath)
 	if err != nil {
 		return
 	}
@@ -54,7 +54,7 @@ func loadTraits() (tc *TraitsConfig, err error) {
 		Alignment:   []string{},
 	}
 
-	err = json.Unmarshal(fileJson, &tc)
+	err = json.Unmarshal(f, &tc)
 	if err != nil {
 		return
 	}
