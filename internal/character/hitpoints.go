@@ -13,8 +13,8 @@ func (h *hitpoints) String() string {
 }
 
 func generateHitPoints(conBonus int) *hitpoints {
-	max := dice.D8.Roll(1)[0]
-	hr := dice.D8.Roll(1)[0] + conBonus
+	max := dice.D8.RollOnce()
+	hr := dice.D8.RollOnce() + conBonus
 
 	return &hitpoints{maximum: max, healingRate: hr}
 }

@@ -1,9 +1,19 @@
 package knavigator
 
-import "github.com/brianshef/knavigator/internal/character"
+import (
+	"log"
+
+	"github.com/brianshef/knavigator/internal/character"
+	"github.com/brianshef/knavigator/internal/data"
+)
 
 // Hello simply prints "hello"
 func GenerateCharacter() {
-	c := character.NewCharacter("John Smith")
+	config, err := data.LoadConfig()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	c := character.NewCharacter("John Smith", config)
 	c.Print()
 }

@@ -3,6 +3,7 @@ package character
 import (
 	"fmt"
 
+	"github.com/brianshef/knavigator/internal/data"
 	d "github.com/brianshef/knavigator/internal/dice"
 )
 
@@ -20,7 +21,7 @@ type Character struct {
 }
 
 // NewCharacter generates a new character
-func NewCharacter(name string) *Character {
+func NewCharacter(name string, config *data.Config) *Character {
 	abs := generateAbilities()
 	armor := generateArmor()
 	c := Character{
@@ -29,7 +30,7 @@ func NewCharacter(name string) *Character {
 		hitpoints: generateHitPoints(abs.Constitution.bonus),
 		armor:     armor,
 		speed:     generateSpeed(),
-		traits:    generateTraits(),
+		traits:    generateTraits(config.Traits),
 		inventory: &inventory{
 			armor:             armor,
 			dungeoneeringGear: []*item{},
@@ -42,13 +43,13 @@ func NewCharacter(name string) *Character {
 // Print is a method which prints a string representation of a Character
 func (c *Character) Print() {
 	fmt.Printf(
-		"\n%s\n%s\n%+v\nDefense: %d / +%d\nTraits: %+v\n%+v\n",
+		"\n%s\n%s\n%+v\nDefense: %d / +%d\n%+v\nTraits: %s",
 		c.name,
 		c.abilities.String(),
 		c.hitpoints.String(),
 		c.armor.defense,
-		c.armor.defense - 10,
-		c.traits.String(),
+		c.armor.defense-10,
 		c.inventory.String(),
+		c.traits.DescriptiveString(),
 	)
 }
