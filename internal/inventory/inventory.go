@@ -9,6 +9,7 @@ type Inventory struct {
 	GeneralGear       []*Item
 }
 
+// GenerateInventory generates a new character inventory set
 func GenerateInventory() *Inventory {
 	return &Inventory{
 		Armor:             generateArmor(),
