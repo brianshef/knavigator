@@ -14,7 +14,7 @@ type Armor struct {
 
 func (a *Armor) addTo(inv *Inventory) error {
 	if a.Item.Slots > inv.AvailableSlots {
-		return errors.New("no slots avaiable")
+		return errors.New(noSlotsErrMsg)
 	}
 
 	inv.Armor = a

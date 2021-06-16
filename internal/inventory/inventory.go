@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+const noSlotsErrMsg = "no slots available"
+
 // Inventory is a specific collection of items carried, held, worn, or equipped by the character
 type Inventory struct {
 	TotalSlots        int

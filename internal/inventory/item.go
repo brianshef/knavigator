@@ -10,7 +10,7 @@ type Item struct {
 
 func (i *Item) addTo(inv *Inventory) error {
 	if i.Slots > inv.AvailableSlots {
-		return errors.New("no slots avaiable")
+		return errors.New(noSlotsErrMsg)
 	}
 
 	inv.GeneralGear = append(inv.GeneralGear, i)
