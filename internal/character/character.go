@@ -5,6 +5,7 @@ import (
 
 	"github.com/brianshef/knavigator/internal/data"
 	d "github.com/brianshef/knavigator/internal/dice"
+	"github.com/brianshef/knavigator/internal/inventory"
 )
 
 var dice = d.NewDice()
@@ -14,28 +15,24 @@ type Character struct {
 	name      string
 	abilities *abilities
 	hitpoints *hitpoints
-	armor     *armor
+	armor     *inventory.Armor
 	speed     *speed
 	traits    *traits
-	inventory *inventory
+	inventory *inventory.Inventory
 }
 
 // NewCharacter generates a new character
 func NewCharacter(name string, config *data.Config) *Character {
 	abs := generateAbilities()
-	armor := generateArmor()
+	inv := inventory.GenerateInventory()
 	c := Character{
 		name:      name,
 		abilities: abs,
 		hitpoints: generateHitPoints(abs.Constitution.bonus),
-		armor:     armor,
+		armor:     inv.Armor,
 		speed:     generateSpeed(),
 		traits:    generateTraits(config.Traits),
-		inventory: &inventory{
-			armor:             armor,
-			dungeoneeringGear: []*item{},
-			generalGear:       []*item{},
-		},
+		inventory: inv,
 	}
 	return &c
 }
@@ -47,8 +44,8 @@ func (c *Character) Print() {
 		c.name,
 		c.abilities.String(),
 		c.hitpoints.String(),
-		c.armor.defense,
-		c.armor.defense-10,
+		c.armor.Defense,
+		c.armor.Defense-10,
 		c.inventory.String(),
 		c.traits.DescriptiveString(),
 	)
