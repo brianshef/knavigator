@@ -31,4 +31,5 @@ make build
 
 ### Thanks
 
-Thanks to https://lawbreaker.herokuapp.com/ for inspiring me.
+- Thanks to https://lawbreaker.herokuapp.com/ for inspiring me and posting useful code.
+- Thanks to [u/OrkishBlade](https://www.reddit.com/r/DnDBehindTheScreen/comments/50pcg1/a_post_about_names_names_for_speakers_of_the/) for the random names.

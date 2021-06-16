@@ -9,7 +9,7 @@ import (
 
 // GenerateCharacter generates a new Knave character
 func GenerateCharacter() {
-	config, err := data.LoadConfig()
+	config, err := new(data.Config).Load()
 	if err != nil {
 		log.Fatal(err)
 	}
