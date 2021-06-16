@@ -14,6 +14,6 @@ func GenerateCharacter() {
 		log.Fatal(err)
 	}
 
-	c := character.NewCharacter("John Smith", config)
+	c := character.NewCharacter(config)
 	c.Print()
 }

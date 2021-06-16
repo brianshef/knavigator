@@ -6,6 +6,7 @@ import (
 	"github.com/brianshef/knavigator/internal/data"
 	d "github.com/brianshef/knavigator/internal/dice"
 	"github.com/brianshef/knavigator/internal/inventory"
+	"github.com/brianshef/knavigator/internal/names"
 )
 
 var dice = d.NewDice()
@@ -22,11 +23,15 @@ type Character struct {
 }
 
 // NewCharacter generates a new character
-func NewCharacter(name string, config *data.Config) *Character {
+func NewCharacter(config *data.Config) *Character {
 	abs := generateAbilities()
 	inv := inventory.GenerateInventory()
+
 	c := Character{
-		name:      name,
+		name: names.GenerateName(
+			config.Names.FirstNames,
+			config.Names.Surnames,
+		),
 		abilities: abs,
 		hitpoints: generateHitPoints(abs.Constitution.bonus),
 		armor:     inv.Armor,
