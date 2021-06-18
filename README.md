@@ -28,25 +28,25 @@ make build
 $ make run
 go run cmd/app/main.go
 
-Henro Pottaker
+Aliya Redwine
 Strength: 11 / +1
-Dexterity: 14 / +4
-Constitution: 13 / +3
-Intelligence: 11 / +1
-Wisdom: 11 / +1
-Charisma: 11 / +1
-HP: 7 / Healing Rate: 8
-Defense: 11 / +1
-Armor: none
+Dexterity: 12 / +2
+Constitution: 12 / +2
+Intelligence: 14 / +4
+Wisdom: 14 / +4
+Charisma: 13 / +3
+HP: 7 / +8
+Defense: 14 / +4
+Armor: Brigandine with shield (Defense 14, 3 Slots, Quality 4)
 Dungeoneering Gear: []
 General Gear: []
-Traits: Has a TINY physique with a DELICATE face, BURN SCAR skin, and DREADLOCKS hair. Wears PATCHED clothing and speaks in a RAPID-FIRE voice. Is CURIOUS and believes in CHAOS, yet GREEDY. Was once a PICKPOCKET, but has since come to be HAUNTED.
+Slots: 9 / 12
+Traits: Has a STATUESQUE physique with a SQUARE face, POCKMARKED skin, and CROPPED hair. Wears FLAMBOYANT clothing and speaks in a GRAVELLY voice. Is DISCIPLINED, yet WASTEFUL. Aligned towards LAW. Was once a CHARLATAN, and has had the misfortune of being HAUNTED.
 ```
 
 ## Development
 
 - TODO: Unit tests !!!
-- TODO: Generate armor
 - TODO: Generate gear
 - TODO: Turning resulting data into nice-looking presentation
 

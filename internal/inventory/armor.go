@@ -35,15 +35,15 @@ func (a *Armor) setStats(defense, slots, quality int) {
 
 func (a *Armor) addHelmet() {
 	a.Helmet = true
-	a.Defense += 1
-	a.Slots += 1
+	a.Defense++
+	a.Slots++
 	a.Name += " with helmet"
 }
 
 func (a *Armor) addShield() {
 	a.Shield = true
-	a.Defense += 1
-	a.Slots += 1
+	a.Defense++
+	a.Slots++
 	a.Name += " with shield"
 }
 
