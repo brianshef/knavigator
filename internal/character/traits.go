@@ -49,11 +49,11 @@ func (t *traits) DescriptiveString() string {
 	return fmt.Sprintf(
 		"Has a %s physique with a %s face, %s skin, and %s hair. "+
 			"Wears %s clothing and speaks in a %s voice. "+
-			"Is %s and believes in %s, yet %s. "+
-			"Was once a %s, but has since come to be %s.",
+			"Is %s, yet %s. Aligned towards %s. "+
+			"Was once a %s, and has had the misfortune of being %s.",
 		t.Physique, t.Face, t.Skin, t.Hair,
 		t.Clothing, t.Speech,
-		t.Virtue, t.Alignment, t.Vice,
+		t.Virtue, t.Vice, t.Alignment,
 		t.Background, t.Misfortunes,
 	)
 }

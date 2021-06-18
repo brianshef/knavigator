@@ -25,7 +25,12 @@ type Character struct {
 // NewCharacter generates a new character
 func NewCharacter(config *data.Config) *Character {
 	abs := generateAbilities()
-	inv := inventory.GenerateInventory()
+
+	inv := inventory.GenerateInventory(
+		abs.Constitution.defense,
+		config.Armor.Armor,
+		config.Armor.HelmetsAndShields,
+	)
 
 	c := Character{
 		name: names.GenerateName(
