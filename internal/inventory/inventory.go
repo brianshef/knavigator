@@ -15,6 +15,7 @@ type Inventory struct {
 	TotalSlots        int
 	AvailableSlots    int
 	Armor             *Armor
+	Weapon            *Weapon
 	DungeoneeringGear []*Item
 	GeneralGear       []*Item
 }
@@ -42,13 +43,23 @@ func (i *Inventory) String() string {
 }
 
 // GenerateInventory generates a new character inventory set
-func GenerateInventory(slots int, armors, helmetsAndShields []string) *Inventory {
+func GenerateInventory(slots int, armors, helmetsAndShields, weapons []string) *Inventory {
 	inv := &Inventory{
 		TotalSlots:     slots,
 		AvailableSlots: slots,
 	}
 
 	inv.Add(generateArmor(armors, helmetsAndShields))
+	inv.Add(generateWeapon(weapons))
 
 	return inv
+}
+
+func stringInSlice(a string, list []string) bool {
+    for _, b := range list {
+        if b == a {
+            return true
+        }
+    }
+    return false
 }

@@ -64,7 +64,6 @@ func generateArmor(armors, helmetsAndShields []string) *Armor {
 		},
 		Defense: defaultArmorDefense,
 	}
-	a.Name = armorType
 	switch armorType {
 	case "No armor":
 		a.setStats(defaultArmorDefense, 0, 0)

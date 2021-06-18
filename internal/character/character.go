@@ -17,6 +17,7 @@ type Character struct {
 	abilities *abilities
 	hitpoints *hitpoints
 	armor     *inventory.Armor
+	weapon    *inventory.Weapon
 	speed     *speed
 	traits    *traits
 	inventory *inventory.Inventory
@@ -30,6 +31,7 @@ func NewCharacter(config *data.Config) *Character {
 		abs.Constitution.defense,
 		config.Armor.Armor,
 		config.Armor.HelmetsAndShields,
+		config.Weapons.Weapons,
 	)
 
 	c := Character{
@@ -40,6 +42,7 @@ func NewCharacter(config *data.Config) *Character {
 		abilities: abs,
 		hitpoints: generateHitPoints(abs.Constitution.bonus),
 		armor:     inv.Armor,
+		weapon:    inv.Weapon,
 		speed:     generateSpeed(),
 		traits:    generateTraits(config.Traits),
 		inventory: inv,
@@ -50,12 +53,13 @@ func NewCharacter(config *data.Config) *Character {
 // Print is a method which prints a string representation of a Character
 func (c *Character) Print() {
 	fmt.Printf(
-		"\n%s\n%s\n%+v\nDefense: %d / +%d\n%+v\nTraits: %s",
+		"\n%s\n%s\n%s\nDefense: %d / +%d\nWeapon: %s\n%+v\nTraits: %s",
 		c.name,
 		c.abilities.String(),
 		c.hitpoints.String(),
 		c.armor.Defense,
 		c.armor.Defense-10,
+		c.weapon.String(),
 		c.inventory.String(),
 		c.traits.DescriptiveString(),
 	)
