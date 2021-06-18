@@ -2,9 +2,13 @@ package inventory
 
 import (
 	"fmt"
+
+	d "github.com/brianshef/knavigator/internal/dice"
 )
 
 const noSlotsErrMsg = "no slots available"
+
+var dice = d.NewDice()
 
 // Inventory is a specific collection of items carried, held, worn, or equipped by the character
 type Inventory struct {
@@ -29,7 +33,7 @@ func (i *Inventory) Add(a Addable) error {
 func (i *Inventory) String() string {
 	return fmt.Sprintf(
 		"Armor: %s\nDungeoneering Gear: %v\nGeneral Gear: %v\nSlots: %v / %v",
-		i.Armor.Name,
+		i.Armor.String(),
 		i.DungeoneeringGear,
 		i.GeneralGear,
 		i.AvailableSlots,
@@ -38,13 +42,13 @@ func (i *Inventory) String() string {
 }
 
 // GenerateInventory generates a new character inventory set
-func GenerateInventory(slots int) *Inventory {
+func GenerateInventory(slots int, armors, helmetsAndShields []string) *Inventory {
 	inv := &Inventory{
 		TotalSlots:     slots,
 		AvailableSlots: slots,
 	}
 
-	inv.Add(generateArmor())
+	inv.Add(generateArmor(armors, helmetsAndShields))
 
 	return inv
 }
