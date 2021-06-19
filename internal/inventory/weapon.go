@@ -8,46 +8,46 @@ import (
 	d "github.com/brianshef/knavigator/internal/dice"
 )
 
-type Archetype int
+type archetype int
 
 const (
-	Unarmed Archetype = iota
-	SimpleMelee
-	SimpleRanged
-	LightMelee
-	LightRanged
-	HeavyMelee
-	HeavyRanged
+	unarmed archetype = iota
+	simpleMelee
+	simpleRanged
+	lightMelee
+	lightRanged
+	heavyMelee
+	heavyRanged
 )
 
-var archetypeMappings = map[Archetype][]string{
-	Unarmed: {"Unarmed"},
-	SimpleMelee: {
+var archetypeMappings = map[archetype][]string{
+	unarmed: {"Unarmed"},
+	simpleMelee: {
 		"Dagger",
 		"Cudgel",
 		"Sickle",
 		"Staff",
 	},
-	SimpleRanged: {
+	simpleRanged: {
 		"Sling",
 	},
-	LightMelee: {
+	lightMelee: {
 		"Spear",
 		"Sword",
 		"Mace",
 		"Axe",
 		"Flail",
 	},
-	LightRanged: {
+	lightRanged: {
 		"Bow",
 	},
-	HeavyMelee: {
+	heavyMelee: {
 		"Halberd",
 		"War Hammer",
 		"Long Sword",
 		"Battle Axe",
 	},
-	HeavyRanged: {
+	heavyRanged: {
 		"Crossbow",
 	},
 }
@@ -77,13 +77,13 @@ func (w *Weapon) setStats(damage *d.Die, hands, slots, quality int) {
 	w.Quality = quality
 }
 
-func (w *Weapon) getArchetype() Archetype {
+func (w *Weapon) getArchetype() archetype {
 	for a, weapons := range archetypeMappings {
 		if stringInSlice(w.Name, weapons) {
 			return a
 		}
 	}
-	return Unarmed
+	return unarmed
 }
 
 // String returns a string representation of a Weapon
@@ -103,19 +103,19 @@ func generateWeapon(weapons []string) *Weapon {
 	}
 
 	switch w.getArchetype() {
-	case Unarmed:
+	case unarmed:
 		w.setStats(&dice.D4, 0, 0, 0)
-	case SimpleMelee:
+	case simpleMelee:
 		w.setStats(&dice.D6, 1, 1, 3)
-	case SimpleRanged:
+	case simpleRanged:
 		w.setStats(&dice.D4, 1, 1, 3)
-	case LightMelee:
+	case lightMelee:
 		w.setStats(&dice.D8, 1, 2, 3)
-	case LightRanged:
+	case lightRanged:
 		w.setStats(&dice.D6, 2, 2, 3)
-	case HeavyMelee:
+	case heavyMelee:
 		w.setStats(&dice.D10, 2, 3, 3)
-	case HeavyRanged:
+	case heavyRanged:
 		w.setStats(&dice.D8, 2, 3, 3)
 	default:
 		log.Fatalf("unrecognized weapon archetype %v for %s", w.getArchetype(), w.Name)
