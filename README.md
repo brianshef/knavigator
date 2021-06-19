@@ -28,20 +28,21 @@ make build
 $ make run
 go run cmd/app/main.go
 
-Aliya Redwine
-Strength: 11 / +1
-Dexterity: 12 / +2
-Constitution: 12 / +2
-Intelligence: 14 / +4
-Wisdom: 14 / +4
-Charisma: 13 / +3
-HP: 7 / +8
+Maya Oakes
+Strength: 12 / +2
+Dexterity: 11 / +1
+Constitution: 11 / +1
+Intelligence: 11 / +1
+Wisdom: 11 / +1
+Charisma: 11 / +1
+HP: 6 / +7
 Defense: 14 / +4
-Armor: Brigandine with shield (Defense 14, 3 Slots, Quality 4)
+Weapon: Dagger (d6 damage, 1 slots, 1 hands, 3 quality)
+Armor: Brigandine with helmet (Defense 14, 3 Slots, Quality 4)
 Dungeoneering Gear: []
 General Gear: []
-Slots: 9 / 12
-Traits: Has a STATUESQUE physique with a SQUARE face, POCKMARKED skin, and CROPPED hair. Wears FLAMBOYANT clothing and speaks in a GRAVELLY voice. Is DISCIPLINED, yet WASTEFUL. Aligned towards LAW. Was once a CHARLATAN, and has had the misfortune of being HAUNTED.
+Slots: 7 / 11
+Traits: Has a GAUNT physique with a PATRICIAN face, PIERCED skin, and BALD hair. Wears OVERSIZED clothing and speaks in a RAPID-FIRE voice. Is MERCIFUL, yet CRUEL. Aligned towards LAW. Was once a GAMBLER, and has had the misfortune of being EXILED.
 ```
 
 ## Development
