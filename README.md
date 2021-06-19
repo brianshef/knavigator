@@ -28,25 +28,26 @@ make build
 $ make run
 go run cmd/app/main.go
 
-Henro Pottaker
-Strength: 11 / +1
-Dexterity: 14 / +4
-Constitution: 13 / +3
+Maya Oakes
+Strength: 12 / +2
+Dexterity: 11 / +1
+Constitution: 11 / +1
 Intelligence: 11 / +1
 Wisdom: 11 / +1
 Charisma: 11 / +1
-HP: 7 / Healing Rate: 8
-Defense: 11 / +1
-Armor: none
+HP: 6 / +7
+Defense: 14 / +4
+Weapon: Dagger (d6 damage, 1 slots, 1 hands, 3 quality)
+Armor: Brigandine with helmet (Defense 14, 3 Slots, Quality 4)
 Dungeoneering Gear: []
 General Gear: []
-Traits: Has a TINY physique with a DELICATE face, BURN SCAR skin, and DREADLOCKS hair. Wears PATCHED clothing and speaks in a RAPID-FIRE voice. Is CURIOUS and believes in CHAOS, yet GREEDY. Was once a PICKPOCKET, but has since come to be HAUNTED.
+Slots: 7 / 11
+Traits: Has a GAUNT physique with a PATRICIAN face, PIERCED skin, and BALD hair. Wears OVERSIZED clothing and speaks in a RAPID-FIRE voice. Is MERCIFUL, yet CRUEL. Aligned towards LAW. Was once a GAMBLER, and has had the misfortune of being EXILED.
 ```
 
 ## Development
 
 - TODO: Unit tests !!!
-- TODO: Generate armor
 - TODO: Generate gear
 - TODO: Turning resulting data into nice-looking presentation
 
