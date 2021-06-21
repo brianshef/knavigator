@@ -1,7 +1,6 @@
 package inventory
 
 import (
-	"errors"
 	"fmt"
 	"log"
 
@@ -60,12 +59,15 @@ type Weapon struct {
 }
 
 func (w *Weapon) addTo(inv *Inventory) error {
-	if w.Item.Slots > inv.AvailableSlots {
-		return errors.New(noSlotsErrMsg)
-	}
+	// Equipped weapons do not take up inventory slots
+	// if w.Item.Slots > inv.AvailableSlots {
+	// 	return errors.New(noSlotsErrMsg)
+	// }
 
 	inv.Weapon = w
-	inv.AvailableSlots -= w.Item.Slots
+
+	// Equipped weapons do not take up inventory slots
+	// inv.AvailableSlots -= w.Item.Slots
 
 	return nil
 }

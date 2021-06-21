@@ -50,7 +50,7 @@ func (c *Config) Load() error {
 	}
 
 	// Sanity checking
-	if c.Traits == nil || c.Armor == nil || c.Names == nil || c.Weapons == nil {
+	if c.Traits == nil || c.Armor == nil || c.Names == nil || c.Weapons == nil || c.Gear == nil {
 		return errors.New("configuration is missing after loading")
 	}
 
