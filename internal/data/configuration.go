@@ -9,6 +9,7 @@ var configFiles = []string{
 	"names.json",
 	"armor.json",
 	"weapons.json",
+	"gear.json",
 }
 
 // Mapping is a commonly used data structure representing map[string]interface{}
@@ -20,6 +21,7 @@ type Config struct {
 	Names   *NamesConfig
 	Armor   *ArmorConfig
 	Weapons *WeaponsConfig
+	Gear    *GearConfig
 }
 
 // Configurable defines an interface for any configuration struct that can be converted from a map
@@ -34,6 +36,7 @@ func NewConfig() (c *Config, err error) {
 		Names:   &NamesConfig{},
 		Armor:   &ArmorConfig{},
 		Weapons: &WeaponsConfig{},
+		Gear: &GearConfig{},
 	}
 
 	err = c.Load()
@@ -52,6 +55,8 @@ func (c *Config) mapFrom(mappings map[string]Mapping) (err error) {
 			err = c.Armor.mapFrom(m)
 		case "weapons.json":
 			err = c.Weapons.mapFrom(m)
+		case "gear.json":
+			err = c.Gear.mapFrom(m)
 		default:
 			log.Printf("WARNING: skipping unknown config filename %s", filename)
 			continue

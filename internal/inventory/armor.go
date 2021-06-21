@@ -1,7 +1,6 @@
 package inventory
 
 import (
-	"errors"
 	"fmt"
 	"log"
 )
@@ -17,12 +16,15 @@ type Armor struct {
 }
 
 func (a *Armor) addTo(inv *Inventory) error {
-	if a.Item.Slots > inv.AvailableSlots {
-		return errors.New(noSlotsErrMsg)
-	}
+	// Equipped armor does not take up inventory slots
+	// if a.Item.Slots > inv.AvailableSlots {
+	// 	return errors.New(noSlotsErrMsg)
+	// }
 
 	inv.Armor = a
-	inv.AvailableSlots -= a.Item.Slots
+
+	// Equipped armor does not take up inventory slots
+	// inv.AvailableSlots -= a.Item.Slots
 
 	return nil
 }
@@ -60,7 +62,7 @@ func generateArmor(armors, helmetsAndShields []string) *Armor {
 		Item: Item{
 			Name:    armorType,
 			Slots:   0,
-			Quality: 0,
+			Quality: 3,
 		},
 		Defense: defaultArmorDefense,
 	}
