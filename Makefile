@@ -2,6 +2,7 @@
 BUILD := $(shell git rev-parse --short HEAD)
 PROJECTNAME := $(shell basename "$(PWD)")
 MAINFILE := cmd/app/main.go
+SERVERFILE := web/app/main.go
 
 install:
 	go install ${MAINFILE}
@@ -9,6 +10,9 @@ install:
 test:
 	golint ./...
 	go test ./...
+
+serve:
+	go run ${SERVERFILE}
 
 run:
 	go run ${MAINFILE}
