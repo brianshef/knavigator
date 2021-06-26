@@ -17,7 +17,8 @@ make run
 ```
 make serve
 ```
-( Visit `http://localhost:3000` in the browser )
+
+( Visit `http://localhost:3000/character` in the browser )
 
 - Build locally:
 ```
@@ -28,7 +29,11 @@ make build
 
 [Available at DriveThruRPG](https://www.drivethrurpg.com/product/250888/Knave?affiliate_id=379088), Knave is a rules-lite toolkit for running old school fantasy RPGs without classes.
 
-### Sample Output
+### Sample Web Output
+
+![screenshot](/assets/screenshot.png?raw=true "Screenshot")
+
+### Sample Command Output
 
 ```
 $ make run

@@ -9,7 +9,7 @@ type hitpoints struct {
 
 // String is a method for returning a string representation of the hitpoints
 func (h *hitpoints) String() string {
-	return fmt.Sprintf("HP: %d / +%d", h.maximum, h.healingRate)
+	return fmt.Sprintf("%d / +%d", h.maximum, h.healingRate)
 }
 
 func generateHitPoints(conBonus int) *hitpoints {

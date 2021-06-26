@@ -12,10 +12,10 @@ type speed struct {
 	combat      int
 }
 
-// Sprintf is a method to return a string representation of the speed
-func (s *speed) Sprintf() string {
+// String is a method to return a string representation of the speed
+func (s *speed) String() string {
 	return fmt.Sprintf(
-		"Speed: Exploration %d ft. / Combat %d ft.",
+		"Exploration %d ft. / Combat %d ft.",
 		s.exploration,
 		s.combat,
 	)

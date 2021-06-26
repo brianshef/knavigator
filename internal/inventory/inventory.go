@@ -2,6 +2,7 @@ package inventory
 
 import (
 	"fmt"
+	"strings"
 
 	"github.com/brianshef/knavigator/internal/data"
 	d "github.com/brianshef/knavigator/internal/dice"
@@ -43,6 +44,25 @@ func (i *Inventory) String() string {
 		i.TotalSlots,
 		i.StartingMoney,
 	)
+}
+
+// PPrint returns a pretty string representation of a specific category in the inventory
+func (i *Inventory) PPrint(category string) string {
+	var s []string
+	switch category {
+	case "DungeoneeringGear":
+		for _, g := range i.DungeoneeringGear {
+			s = append(s, g.String())
+		}
+	case "GeneralGear":
+		for _, g := range i.GeneralGear {
+			s = append(s, g.String())
+		}
+	default:
+		break
+	}
+
+	return strings.Join(s, ", ")
 }
 
 // GenerateInventory generates a new character inventory set

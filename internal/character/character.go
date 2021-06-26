@@ -13,34 +13,34 @@ var dice = d.NewDice()
 
 // Character defines all the attributes of a Knave character
 type Character struct {
-	name      string
-	abilities *abilities
-	hitpoints *hitpoints
-	armor     *inventory.Armor
-	weapon    *inventory.Weapon
-	speed     *speed
-	traits    *traits
-	inventory *inventory.Inventory
+	Name      string               `json:"Name"`
+	Abilities *abilities           `json:"Abilities"`
+	Hitpoints *hitpoints           `json:"Hitpoints"`
+	Armor     *inventory.Armor     `json:"Armor"`
+	Weapon    *inventory.Weapon    `json:"Weapon"`
+	Speed     *speed               `json:"Speed"`
+	Traits    *traits              `json:"Traits"`
+	Inventory *inventory.Inventory `json:"Inventory"`
 }
 
 // NewCharacter generates a new character
 func NewCharacter(config *data.Config) *Character {
 	abs := generateAbilities()
 
-	inv := inventory.GenerateInventory(abs.Constitution.defense, config)
+	inv := inventory.GenerateInventory(abs.Constitution.Defense, config)
 
 	c := Character{
-		name: names.GenerateName(
+		Name: names.GenerateName(
 			config.Names.FirstNames,
 			config.Names.Surnames,
 		),
-		abilities: abs,
-		hitpoints: generateHitPoints(abs.Constitution.bonus),
-		armor:     inv.Armor,
-		weapon:    inv.Weapon,
-		speed:     generateSpeed(),
-		traits:    generateTraits(config.Traits),
-		inventory: inv,
+		Abilities: abs,
+		Hitpoints: generateHitPoints(abs.Constitution.Bonus),
+		Armor:     inv.Armor,
+		Weapon:    inv.Weapon,
+		Speed:     generateSpeed(),
+		Traits:    generateTraits(config.Traits),
+		Inventory: inv,
 	}
 	return &c
 }
@@ -48,14 +48,14 @@ func NewCharacter(config *data.Config) *Character {
 // Print is a method which prints a string representation of a Character
 func (c *Character) Print() {
 	fmt.Printf(
-		"\n%s\n%s\n%s\nDefense: %d / +%d\nWeapon: %s\n%+v\nTraits: %s",
-		c.name,
-		c.abilities.String(),
-		c.hitpoints.String(),
-		c.armor.Defense,
-		c.armor.Defense-10,
-		c.weapon.String(),
-		c.inventory.String(),
-		c.traits.DescriptiveString(),
+		"\n%s\n%s\nHP: %s\nDefense: %d / +%d\nWeapon: %s\n%+v\nTraits: %s",
+		c.Name,
+		c.Abilities.String(),
+		c.Hitpoints.String(),
+		c.Armor.Defense,
+		c.Armor.Defense-10,
+		c.Weapon.String(),
+		c.Inventory.String(),
+		c.Traits.DescriptiveString(),
 	)
 }
