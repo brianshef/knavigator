@@ -90,7 +90,7 @@ func (w *Weapon) getArchetype() archetype {
 
 // String returns a string representation of a Weapon
 func (w *Weapon) String() string {
-	return fmt.Sprintf("%s (%s damage, %v slots, %v hands, %v quality)", w.Name, w.Damage.String(), w.Slots, w.Hands, w.Quality)
+	return fmt.Sprintf("%s (%s Damage, %v Slots, %v Hands, Quality %v)", w.Name, w.Damage.String(), w.Slots, w.Hands, w.Quality)
 }
 
 func generateWeapon(weapons []string) *Weapon {

@@ -7,33 +7,33 @@ const (
 	abilityDefenseScalar = 10
 )
 
-type ability struct {
-	name    string
-	defense int
-	bonus   int
+type Ability struct {
+	Name    string
+	Defense int
+	Bonus   int
 }
 
 // String is a method for returning the string representation of an ability
-func (a *ability) String() string {
-	return fmt.Sprintf("%s: %d / +%d", a.name, a.defense, a.bonus)
+func (a *Ability) String() string {
+	return fmt.Sprintf("%s: %d / +%d", a.Name, a.Defense, a.Bonus)
 }
 
-func newAbility(name string) *ability {
+func newAbility(name string) *Ability {
 	lowest := dice.D6.RollKeepLowest(abilityRolls)
-	return &ability{
-		name:    name,
-		bonus:   lowest,
-		defense: lowest + abilityDefenseScalar,
+	return &Ability{
+		Name:    name,
+		Bonus:   lowest,
+		Defense: lowest + abilityDefenseScalar,
 	}
 }
 
 type abilities struct {
-	Strength     *ability
-	Dexterity    *ability
-	Constitution *ability
-	Intelligence *ability
-	Wisdom       *ability
-	Charisma     *ability
+	Strength     *Ability
+	Dexterity    *Ability
+	Constitution *Ability
+	Intelligence *Ability
+	Wisdom       *Ability
+	Charisma     *Ability
 }
 
 // String is a method for returning the string representation of the ability scores

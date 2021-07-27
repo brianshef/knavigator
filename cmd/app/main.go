@@ -1,7 +1,15 @@
 package main
 
-import "github.com/brianshef/knavigator/internal/knavigator"
+import (
+	"log"
+
+	"github.com/brianshef/knavigator/internal/knavigator"
+)
 
 func main() {
-	knavigator.GenerateCharacter()
+	c, err := knavigator.GenerateCharacter()
+	if err != nil {
+		log.Fatal(err)
+	}
+	c.Print()
 }

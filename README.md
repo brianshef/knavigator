@@ -8,10 +8,17 @@ Generate a Knave character
 make test
 ```
 
-- Run locally:
+- Run locally as command:
 ```
 make run
 ```
+
+- Run locally as web app:
+```
+make serve
+```
+
+( Visit `http://localhost:3000/character` in the browser )
 
 - Build locally:
 ```
@@ -22,33 +29,37 @@ make build
 
 [Available at DriveThruRPG](https://www.drivethrurpg.com/product/250888/Knave?affiliate_id=379088), Knave is a rules-lite toolkit for running old school fantasy RPGs without classes.
 
-### Sample Output
+### Sample Web Output
+
+![screenshot](/assets/screenshot.png?raw=true "Screenshot")
+
+### Sample Command Output
 
 ```
 $ make run
 go run cmd/app/main.go
 
-Maya Oakes
-Strength: 12 / +2
+Chloe Moon
+Strength: 13 / +3
 Dexterity: 11 / +1
-Constitution: 11 / +1
+Constitution: 12 / +2
 Intelligence: 11 / +1
 Wisdom: 11 / +1
 Charisma: 11 / +1
-HP: 6 / +7
-Defense: 14 / +4
-Weapon: Dagger (d6 damage, 1 slots, 1 hands, 3 quality)
-Armor: Brigandine with helmet (Defense 14, 3 Slots, Quality 4)
-Dungeoneering Gear: []
-General Gear: []
-Slots: 7 / 11
-Traits: Has a GAUNT physique with a PATRICIAN face, PIERCED skin, and BALD hair. Wears OVERSIZED clothing and speaks in a RAPID-FIRE voice. Is MERCIFUL, yet CRUEL. Aligned towards LAW. Was once a GAMBLER, and has had the misfortune of being EXILED.
+HP: 8 / +4
+Defense: 13 / +3
+Weapon: Cudgel (d6 damage, 1 slots, 1 hands, 3 quality)
+Armor: Brigandine (Defense 13, 2 Slots, Quality 4)
+Dungeoneering Gear: [Candles, 5 (1 Slots)]
+General Gear: [Rations (1 Slots) Rations (1 Slots) Bear trap (1 Slots) Lens (1 Slots)]
+Slots: 7 / 12
+Optional Starting Money: 220 copper pieces
+Traits: Has a LANKY physique with a WIDE face, PIERCED skin, and GREASED hair. Wears UNDERSIZED clothing and speaks in a DRAWLING voice. Is HONORABLE, yet IRASCIBLE. Aligned towards NEUTRALITY. Was once a BUTCHER, and has had the misfortune of being CONDEMNED.
 ```
 
 ## Development
 
 - TODO: Unit tests !!!
-- TODO: Generate gear
 - TODO: Turning resulting data into nice-looking presentation
 
 ### Thanks
