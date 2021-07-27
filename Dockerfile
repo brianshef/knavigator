@@ -10,4 +10,4 @@ RUN go install -v ./...
 
 EXPOSE $PORT
 
-CMD ["/go/bin/knavigator"]
+CMD [ "/go/bin/app" ]
